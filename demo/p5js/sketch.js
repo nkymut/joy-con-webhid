@@ -4,10 +4,14 @@
    let rightController = null;
    let joycons = {}; // Store Joy-Con data by ID
    let buttonData = {};
+   let myfont;
    
    function setup() {
        createCanvas(800, 600, WEBGL);
        colorMode(HSB, 360, 100, 100);
+
+       myfont = loadFont('./OpenSans-Regular.ttf');
+       textFont(myfont);
    }
    
    function draw() {
