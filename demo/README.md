@@ -4,7 +4,7 @@ This directory contains various demonstrations of the Joy-Con WebHID library org
 
 ## Demo Structure
 
-### 📁 `basic/`
+### `basic/`
 The original Joy-Con demo with full visualization of controller state.
 - **File**: `index.html`
 - **Features**: 
@@ -15,7 +15,7 @@ The original Joy-Con demo with full visualization of controller state.
   - Debug mode with sensor data
 - **Type**: ES6 Module usage
 
-### 📁 `p5js/`
+### `p5js/`
 Joy-Con integration with p5.js for creative coding.
 - **File**: `p5-global-demo.html`
 - **Features**:
@@ -25,7 +25,7 @@ Joy-Con integration with p5.js for creative coding.
   - Real-time orientation data display
 - **Type**: Global bundle usage (no modules)
 
-### 📁 `webmidi/`
+### `webmidi/`
 Joy-Con to Web MIDI bridge for music applications.
 - **File**: `webmidi.html`
 - **Features**:
@@ -34,16 +34,6 @@ Joy-Con to Web MIDI bridge for music applications.
   - Works with DAWs and music software
   - Configurable MIDI mapping
 - **Type**: ES6 Module usage
-
-### 📁 `test/`
-Simple test interface for debugging and API exploration.
-- **File**: `simple-global-test.html`
-- **Features**:
-  - API availability testing
-  - Connection debugging
-  - Raw input data logging
-  - Error diagnosis
-- **Type**: Global bundle usage (no modules)
 
 ## Usage Types
 
