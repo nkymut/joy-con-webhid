@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joy-Con with p5.js - Global Build Demo</title>
+    
+    <!-- Load p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    
+    <!-- Load the global Joy-Con WebHID library -->
+    <script src="../../dist/joy-con-webhid.min.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .instructions {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Joy-Con with p5.js - Global Build Demo</h1>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Connect your Joy-Con controllers via Bluetooth</li>
+            <li>Click "Connect Joy-Con" below</li>
+            <li>Move the Joy-Con controllers to see the visualization respond</li>
+            <li>Press buttons to see different effects</li>
+        </ol>
+    </div>
+    
+    <button onclick="connectController()">Connect Joy-Con</button>
+    
+    <div id="canvas-container"></div>
+    
+    <script src="sketch.js"></script>
+     
+</body>
+</html> 

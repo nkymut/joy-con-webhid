@@ -28,6 +28,35 @@ npm install --save joy-con-webhid
 (For **Linux**, see this [comment on Issue #3](https://github.com/tomayac/joy-con-webhid/issues/3#issuecomment-944427792)
 for required pre-steps.)
 
+## Bundle for p5.js and Non-Module Environments
+
+For environments that don't support ES6 modules (like p5.js sketches or simple HTML pages), you can use the bundled version:
+
+```bash
+npm run build:bundle      # Creates joy-con-webhid.js (unminified)
+npm run build:bundle-min  # Creates joy-con-webhid.min.js (minified)
+```
+
+This creates bundled files that can be loaded directly in HTML:
+
+```html
+<script src="path/to/joy-con-webhid.min.js"></script>
+<script>
+  // API is available globally
+  async function connectController() {
+    await connectJoyCon();
+    
+    for (let [id, joyCon] of connectedJoyCons) {
+      joyCon.addEventListener('hidinput', (event) => {
+        console.log('Joy-Con input:', event.detail);
+      });
+    }
+  }
+</script>
+```
+
+For a complete p5.js example, see `demo/p5js/p5-global-demo.html` and `BUNDLE.md`.
+
 ## Usage
 
 Make sure you have a pairing button on your page.

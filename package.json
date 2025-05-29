@@ -11,7 +11,9 @@
     "build:parse": "npx terser ./src/parse.js --toplevel --comments /@license/ --ecma=8 -o ./dist/parse.js",
     "build:madgwick": "npx terser ./src/madgwick.js --toplevel --comments /@license/ --ecma=8 -o ./dist/madgwick.js",
     "build:connectRingCon": "npx terser ./src/connectRingCon.js --toplevel --comments /@license/ --ecma=8 -o ./dist/connectRingCon.js",
-    "build": "npm run clean && npm run build:index && npm run build:joycon && npm run build:parse && npm run build:madgwick && npm run build:connectRingCon",
+    "build:bundle": "npx esbuild ./src/global.js --bundle --format=iife --outfile=./dist/joy-con-webhid.js --target=es2020",
+    "build:bundle-min": "npx esbuild ./src/global.js --bundle --minify --format=iife --outfile=./dist/joy-con-webhid.min.js --target=es2020",
+    "build": "npm run clean && npm run build:index && npm run build:joycon && npm run build:parse && npm run build:madgwick && npm run build:connectRingCon && npm run build:bundle && npm run build:bundle-min",
     "copyDeps": "shx cp ./node_modules/ahrs/Madgwick.js ./src/madgwick.js && shx sed -i 's/module.exports =/export/' ./src/madgwick.js",
     "prepare": "npm run lint && npm run fix && npm run build && npm run copyDeps",
     "fix": "npx prettier --write ."
@@ -37,6 +39,7 @@
   },
   "homepage": "https://github.com/tomayac/joy-con-webhid#readme",
   "devDependencies": {
+    "esbuild": "^0.19.0",
     "eslint": "^8.47.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^9.0.0",
